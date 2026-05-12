@@ -1,4 +1,6 @@
 import unittest
+
+from matplotlib.style import context
 from string_calculator import add
 
 
@@ -21,6 +23,14 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_newline_as_separator(self):
         self.assertEqual(add("1\n2"), 3)
+
+    def test_mixed_separators(self):
+        self.assertEqual(add("1\n2,3"), 6)
+
+    def test_negative_number_throws_exception(self):
+        with self.assertRaises(Exception) as context:
+            add("-1")
+        self.assertEqual(str(context.exception), "negatives not allowed: -1")
 
 
 if __name__ == "__main__":
