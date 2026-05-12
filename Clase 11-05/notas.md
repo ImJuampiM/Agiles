@@ -35,7 +35,6 @@
 
 | 7 | Un negativo solo lanza excepción | `Add("-1")` | Exception: `"negatives not allowed: -1"` |
 | 8 | Negativo entre positivos lanza excepción | `Add("1,-2,3")` | Exception: `"negatives not allowed: -2"` |
-| 9 | Múltiples negativos en la excepción | `Add("-1,-2,3")` | Exception: `"negatives not allowed: -1, -2"` |
-| 10 | Solo negativos | `Add("-1,-2")` | Exception: `"negatives not allowed: -1, -2"` |
-| 11 | Negativo con salto de línea | `Add("1\n-2,3")` | Exception: `"negatives not allowed: -2"` |
-| 12 | Mezcla de separadores con varios números | `Add("1\n2,3\n4")` | `10` |
+| 9 | Dos números (ejemplo del profe) | `Add("4,2")` | `6` |
+| 10 | Muchos números (ejemplo del profe) | `Add("1,2,3,5,8,13")` | `32` |
+| 11 | Mezcla coma y salto de línea (ejemplo del profe) | `Add("1,2,4\n5,6")` | `18` |
