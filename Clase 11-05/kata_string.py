@@ -1,6 +1,4 @@
 import unittest
-
-from matplotlib.style import context
 from string_calculator import add
 
 
@@ -32,6 +30,10 @@ class TestStringCalculator(unittest.TestCase):
             add("-1")
         self.assertEqual(str(context.exception), "negatives not allowed: -1")
 
+    def test_negative_numbers_raise_exception(self):
+        with self.assertRaises(ValueError) as context:
+            add("1,-2,3")
+        self.assertEqual(str(context.exception), "negatives not allowed: -2")
 
 if __name__ == "__main__":
     unittest.main()

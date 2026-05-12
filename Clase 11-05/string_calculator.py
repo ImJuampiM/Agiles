@@ -2,14 +2,20 @@ def add(numbers):
     if numbers == "":
         return 0
     
-    # Reemplazar saltos de línea por comas para unificar separadores
-    numbers_str = numbers.replace("\n", ",")
-    num_list = numbers_str.split(",")
+    # Normalizamos los delimitadores
+    normalized_numbers = numbers.replace("\n", ",")
     
-    # Validar que no haya números negativos
-    for num_str in num_list:
-        num = int(num_str)
-        if num < 0:
-            raise Exception(f"negatives not allowed: {num}")
+    # Convertimos todos los strings a enteros y los guardamos en una lista
+    num_list = [int(num) for num in normalized_numbers.split(",")]
     
-    return sum(int(num) for num in num_list)
+    # Filtramos para ver si hay algún número negativo
+    negatives = [num for num in num_list if num < 0]
+    
+    if negatives:
+        # Si hay negativos, armamos el mensaje y lanzamos la excepción.
+        # Usamos map(str) para poder unir los números con comas si hubiera más de uno.
+        negatives_str = ",".join(map(str, negatives))
+        raise ValueError(f"negatives not allowed: {negatives_str}")
+    
+    # Si llegamos acá, es porque no hubo negativos, así que sumamos tranquilos
+    return sum(num_list)
