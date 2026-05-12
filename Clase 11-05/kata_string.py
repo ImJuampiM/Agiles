@@ -41,5 +41,8 @@ class TestStringCalculator(unittest.TestCase):
     def test_many_numbers_profe_example(self):
         self.assertEqual(add("1,2,3,5,8,13"), 32)
 
+    def test_mixed_comma_and_newline_profe_example(self):
+        self.assertEqual(add("1,2,4\n5,6"), 18)
+
 if __name__ == "__main__":
     unittest.main()
