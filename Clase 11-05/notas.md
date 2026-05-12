@@ -38,3 +38,5 @@
 | 9 | Dos números (ejemplo del profe) | `Add("4,2")` | `6` |
 | 10 | Muchos números (ejemplo del profe) | `Add("1,2,3,5,8,13")` | `32` |
 | 11 | Mezcla coma y salto de línea (ejemplo del profe) | `Add("1,2,4\n5,6")` | `18` |
+| 12 | Delimitador custom con `;` | `Add("//;\n1;3;6;4")` | `14` |
+| 13 | Delimitador custom con `\|` | `Add("//\|\n1\|3\|6\|4")` | `14` |
