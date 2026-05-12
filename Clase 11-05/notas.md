@@ -21,12 +21,13 @@
 
 ---
 
-## Paso 1 — Tests a pensar
+## Tests — String Calculator
 
-### Funcionalidad 1: Add básico
-
-| Test | Input | Expected |
-|------|-------|----------|
-| String vacío devuelve 0 | `Add("")` | `0` |
-| Un número devuelve ese número | `Add("1")` | `1` |
-| Dos números separados por coma | `Add("1,2")` | `3` |
+| # | Descripción | Input | Expected |
+|---|-------------|-------|----------|
+| 1 | String vacío devuelve 0 | `Add("")` | `0` |
+| 2 | Un número devuelve ese número | `Add("1")` | `1` |
+| 3 | Dos números separados por coma | `Add("1,2")` | `3` |
+| 4 | Múltiples números | `Add("1,2,3")` | `6` |
+| 5 | Salto de línea como separador | `Add("1\n2")` | `3` |
+| 6 | Mezcla de coma y salto de línea | `Add("1\n2,3")` | `6` |
